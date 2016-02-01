@@ -1,8 +1,8 @@
-name: Photo gallery
+name: グスタボのプロジェクト
 markdown: redcarpet
 pygments: true
 permalink: /:year/:month/:title/
-url: https://nadjetey.github.io/GridGallery/
+url: https://グスタボ.tk/
 author:
-    name: Nii Adjetey Sowah
-    twitter: #
+    name: Gustavo Rodrigues
+    twitter: qgustavor
