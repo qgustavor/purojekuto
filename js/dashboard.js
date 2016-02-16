@@ -55,12 +55,12 @@
     gaugeStats.forEach(renderGaugeStat);
     
     var element = document.createElement('div');
-    element.className = 'col-sm-12 text-center'
+    element.className = 'col-sm-12 text-center';
     element.innerHTML = 'More stats coming soon...';
     container.appendChild(element);
   }
     
-  function renderGauge(stat) {
+  function renderGaugeStat(stat) {
     element = document.createElement('div');
     element.className = 'col-sm-' + (stat.size || 4);
     element.innerHTML = '<div class="chart-wrapper"><div class="chart-title">' + stat.title + '</div><div class="chart-stage">' +
