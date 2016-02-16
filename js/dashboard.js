@@ -35,7 +35,7 @@
       return acc += animes[element[keys.nome]][keys.duracao] | 0;
     }, 0) / 60 / 24;
     
-    var stats = [{
+    var gaugeStats = [{
       title: 'Watched animes',
       label: 'anime',
       value: uniqueNames.length,
@@ -52,10 +52,15 @@
       max: Math.floor(days / 30 + 1) * 30
     }];
     
-    stats.forEach(renderStat);
+    gaugeStats.forEach(renderGaugeStat);
+    
+    var element = document.createElement('div');
+    element.className = 'col-sm-12 text-center'
+    element.innerHTML = 'More stats coming soon...';
+    container.appendChild(element);
   }
     
-  function renderStat(stat) {
+  function renderGauge(stat) {
     element = document.createElement('div');
     element.className = 'col-sm-' + (stat.size || 4);
     element.innerHTML = '<div class="chart-wrapper"><div class="chart-title">' + stat.title + '</div><div class="chart-stage">' +
