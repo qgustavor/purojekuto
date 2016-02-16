@@ -1,8 +1,0 @@
-name: グスタボのプロジェクト
-markdown: redcarpet
-pygments: true
-permalink: /:year/:month/:title/
-url: https://グスタボ.tk/
-author:
-    name: Gustavo Rodrigues
-    twitter: qgustavor

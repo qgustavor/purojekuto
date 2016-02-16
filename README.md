@@ -1,4 +1,4 @@
-グスタボのプロジェクト
+グスタボ.tk
 =========
 
-I decided to use グスタボ.tk as a place to showcase projects of mine, where qgustavor.tk keep being my blog.
+A showcase projects of mine and a dashboard of random things.
