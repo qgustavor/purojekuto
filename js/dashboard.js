@@ -52,7 +52,8 @@
       var watchedEpisodes = element[keys.episodio] - (lastEpisodeData[animeName] || 0);
       
       if (watchedEpisodes === 0) {
-        return; // bugged...
+        console.log('bugged element:', element);
+        return acc;
       }
       
       if (watchedEpisodes < 0) {
