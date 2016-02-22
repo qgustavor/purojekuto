@@ -50,9 +50,20 @@
       var animeData = animes[animeName];
       var duration = animeData ? animeData[keys.duracao] : 24;
       var watchedEpisodes = element[keys.episodio] - (lastEpisodeData[animeName] || 0);
+      
+      if (watchedEpisodes === 0) {
+        return; // bugged...
+      }
+      
+      if (watchedEpisodes < 0) {
+        watchedEpisodes = element[keys.episodio];
+      }
+      
       var watchedTime = watchedEpisodes * duration;
+      
       watchedEpisodeCount += watchedEpisodes;
       lastEpisodeData[animeName] = element[keys.episodio];
+      
       return acc += watchedTime;
     }, 0) / 60 / 24;
     
