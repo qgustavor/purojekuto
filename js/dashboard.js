@@ -52,8 +52,8 @@
       var watchedEpisodes = +element[keys.episodio] - (lastEpisodeData[animeName] || 0);
       
       if (watchedEpisodes === 0) {
-        console.log('bugged element:', element);
-        return acc;
+        // rewatched?
+        watchedEpisodes = 1;
       }
       
       if (watchedEpisodes < 0) {
