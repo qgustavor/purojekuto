@@ -49,7 +49,7 @@
       var animeName = element[keys.nome];
       var animeData = animes[animeName];
       var duration = animeData ? animeData[keys.duracao] : 24;
-      var watchedEpisodes = element[keys.episodio] - (lastEpisodeData[animeName] || 0);
+      var watchedEpisodes = +element[keys.episodio] - (lastEpisodeData[animeName] || 0);
       
       if (watchedEpisodes === 0) {
         console.log('bugged element:', element);
@@ -57,13 +57,13 @@
       }
       
       if (watchedEpisodes < 0) {
-        watchedEpisodes = element[keys.episodio];
+        watchedEpisodes = +element[keys.episodio];
       }
       
       var watchedTime = watchedEpisodes * duration;
       
       watchedEpisodeCount += watchedEpisodes;
-      lastEpisodeData[animeName] = element[keys.episodio];
+      lastEpisodeData[animeName] = +element[keys.episodio];
       
       return acc += watchedTime;
     }, 0) / 60 / 24;
@@ -95,14 +95,14 @@
     gaugeStats.forEach(renderGaugeStat);
     
     var element = document.createElement('div');
-    element.className = 'col-sm-12 text-center';
+    element.className = 'col-xs-12 text-center';
     element.innerHTML = 'More stats coming soon...';
     container.appendChild(element);
   }
     
   function renderGaugeStat(stat) {
     element = document.createElement('div');
-    element.className = 'col-sm-' + (stat.size || 3);
+    element.className = 'col-xs-6 col-md-3';
     element.innerHTML = '<div class="chart-wrapper"><div class="chart-title">' + stat.title + '</div><div class="chart-stage">' +
     '<div class="chart-holder"></div></div></div>';
     container.appendChild(element);
