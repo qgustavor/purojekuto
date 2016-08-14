@@ -12,11 +12,13 @@ var footerMessages = [
   'music powered by webaudio',
   'terminal powered by xterm',
   'lyrics by animelyrics.com',
-  '(xterm doesn\'t suport japanese characters)',
-  '(obviously) based on portal credits',
+  '(xterm doesn\'t support japanese characters :( )',
+  '(obviously) inspired by portal credits',
   'anime statistics will be re-added on next update',
-  'visit blog at qgustavor.tk',
-  'contact: gustavo@[gusutavo written in katakana].tk'
+  'they will be where valve staff were',
+  'i don\'t know if I put some danganronpa ascii art',
+  'visit blog at https://qgustavor.tk',
+  'contact: gustavo@[gustavo written in katakana].tk'
 ];
 
 setTimeout(function loop(i) {
