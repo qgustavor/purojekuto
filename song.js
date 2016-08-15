@@ -65,6 +65,10 @@ var stop = function stop(note) {
   renderNote(note, 0);
 };
 
+document.addEventListener('visibilitychange', function () {
+  gainNode.gain.value = document.hidden ? 0 : 0.1;
+});
+
 (function loop(i) {
   var actual = songData[i];
 
