@@ -2,26 +2,23 @@ var xterm = new Terminal();
 xterm.open(document.body);
 xterm.fit();
 
-var cols = xterm.cols - 2;
+var cols = xterm.cols - 4;
 var rightW = cols < 70 ? 1 : Math.floor(cols / 4);
 var leftW = cols - rightW - 3;
-var lines = xterm.lines.length - 2;
+var lines = xterm.lines.length - 4;
 var footerMessages = [
-  '"zetsubousei: hero chiryouyaku": ending theme of danganronpa',
-  'original midi by artarity (from youtube)',
-  'music powered by webaudio',
-  'terminal powered by xterm',
-  'lyrics by animelyrics.com',
-  '(xterm doesn\'t support japanese characters :( )',
-  '(obviously) inspired by portal credits',
-  'anime statistics will be re-added on next update',
-  'they will be where valve staff were',
-  'i don\'t know if I put some danganronpa ascii art',
-  'visit blog at https://qgustavor.tk',
-  'contact: gustavo@[gustavo written in katakana].tk'
+  'ダンガンロンパのＥＤ 絶望性:ヒーロー治療薬',
+  'midi: artarity - https://youtu.be/3XTMzK4SVaI',
+  'music synth: webaudio',
+  'terminal: xterm',
+  'lyrics: animelyrics.com',
+  'font: noto sans mono japanese',
+  'inspiration: valve\'s portal',
+  'blog: https://qgustavor.tk',
+  'contact: メール@グスタボ.tk'
 ];
 
-setTimeout(function loop(i) {
+setTimeout(function loop (i) {
   xterm.write(
     '\x1b[s\u001b[' + (lines + 1) + ';4H\x1b[30m' +
     footerMessages[i].substr(0, leftW - 2) + ' '.repeat(Math.max(0, leftW - footerMessages[i].length - 2)) +
@@ -31,11 +28,11 @@ setTimeout(function loop(i) {
 }, 1000, 0);
 
 function createFrame() {
-  xterm.write(' ┌' + '-'.repeat(leftW) + '┬' + '-'.repeat(rightW) + '┐ ');
+  xterm.write(' /' + '-'.repeat(leftW) + '-' + '-'.repeat(rightW) + '\\\r\n');
   for (var i = 0; i < lines; i++) {
-    xterm.write(' |' + ' '.repeat(leftW) + '|' + ' '.repeat(rightW) + '| ');
+    xterm.write(' |' + ' '.repeat(leftW) + '|' + ' '.repeat(rightW) + '|\r\n');
   }
-  xterm.write(' └' + '-'.repeat(leftW) + '┴' + '-'.repeat(rightW) + '┘ ');
+  xterm.write(' \\' + '-'.repeat(leftW) + '-' + '-'.repeat(rightW) + '/\r\n');
 }
 
 function clearLyrics() {
