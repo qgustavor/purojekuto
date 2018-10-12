@@ -1,11 +1,13 @@
 var xterm = new Terminal();
-xterm.open(document.body);
+xterm.open(document.body, {
+  focus: false
+});
 xterm.fit();
 
 var cols = xterm.cols - 4;
 var rightW = cols < 70 ? 1 : Math.floor(cols / 4);
 var leftW = cols - rightW - 3;
-var lines = xterm.lines.length - 4;
+var lines = xterm.rows - 4;
 var footerMessages = [
   'ダンガンロンパのＥＤ 絶望性:ヒーロー治療薬',
   'midi: artarity - https://youtu.be/3XTMzK4SVaI',
